@@ -10,32 +10,29 @@ import org.springframework.util.StringUtils;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class FizzBuzzTest {
 
-    @Rule
-    public ExpectedException expectedEx = ExpectedException.none();
-
     @Test
-    public void WhenInputNumberDividedBy3ReturnFizz() {
+    public void shouldReturnFizzWhenInputNumberDividedBy3() {
         Assert.assertEquals("fizz", FizzBuzzUtils.getFizzBuzzResponse(9));
     }
 
     @Test
-    public void WhenInputNumberDividedBy5ReturnBuzz() {
+    public void shouldReturnBuzzWhenInputNumberDividedBy5() {
         Assert.assertEquals("buzz", FizzBuzzUtils.getFizzBuzzResponse(10));
     }
 
     @Test
-    public void WhenInputNumberDividedBy15ReturnFizzBuzz() {
+    public void shouldReturnFizzBuzzWhenInputNumberDividedBy15() {
         Assert.assertEquals("fizzbuzz", FizzBuzzUtils.getFizzBuzzResponse(30));
     }
 
     @Test
-    public void WhenInputNumberDoesNotDoesnotDividedby3or5or15ThenReturnSameNumber() {
+    public void shouldReturnSameNumberWhenInputNumberDoesNotDoesnotDividedby3or5or15() {
         int inputNumber = 101;
         Assert.assertEquals(String.valueOf(inputNumber), FizzBuzzUtils.getFizzBuzzResponse(inputNumber));
     }
 
     @Test
-    public void WhenNegetiveNumberIsPassedReturnException() {
+    public void shouldReturnExceptionWhenNegetiveNumberIsPassed() {
         try {
             FizzBuzzUtils.getFizzBuzzResponse(-50);
             Assert.fail("Expected Exception Actual No exception thrown");
