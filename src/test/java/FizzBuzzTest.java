@@ -31,14 +31,11 @@ public class FizzBuzzTest {
         Assert.assertEquals(String.valueOf(inputNumber), FizzBuzzUtils.getFizzBuzzResponse(inputNumber));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void shouldReturnExceptionWhenNegetiveNumberIsPassed() {
-        try {
+
             FizzBuzzUtils.getFizzBuzzResponse(-50);
-            Assert.fail("Expected Exception Actual No exception thrown");
-        } catch (RuntimeException ex) {
-            Assert.assertEquals("NEGETIVE NUMBER IS NOT ALLOWED", ex.getMessage());
-        }
+
     }
 
 }

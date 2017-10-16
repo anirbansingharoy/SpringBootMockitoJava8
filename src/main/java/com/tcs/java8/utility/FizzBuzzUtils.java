@@ -2,10 +2,10 @@ package com.tcs.java8.utility;
 
 public class FizzBuzzUtils {
 
-    public static String getFizzBuzzResponse(int inputNumber) throws RuntimeException
+    public static String getFizzBuzzResponse(int inputNumber) throws IllegalArgumentException
     {
       if(inputNumber<0)
-          throw new RuntimeException("NEGETIVE NUMBER IS NOT ALLOWED");
+          throw new IllegalArgumentException();
         if (inputNumber%15==0)
             return "fizzbuzz";
         else if(inputNumber%3==0)
