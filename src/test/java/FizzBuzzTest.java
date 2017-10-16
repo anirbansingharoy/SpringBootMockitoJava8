@@ -11,12 +11,12 @@ import org.springframework.util.StringUtils;
 public class FizzBuzzTest {
 
     @Test
-    public void shouldReturnFizzWhenInputNumberDividedBy3() {
+    public void shouldReturnFizzWhenInputNumberDividedBy3AndNotBy15() {
         Assert.assertEquals("fizz", FizzBuzzUtils.getFizzBuzzResponse(9));
     }
 
     @Test
-    public void shouldReturnBuzzWhenInputNumberDividedBy5() {
+    public void shouldReturnBuzzWhenInputNumberDividedBy5AndNotBy15() {
         Assert.assertEquals("buzz", FizzBuzzUtils.getFizzBuzzResponse(10));
     }
 
@@ -26,10 +26,18 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shouldReturnSameNumberWhenInputNumberDoesNotDoesnotDividedby3or5or15() {
-        int inputNumber = 101;
+    public void shouldReturnSameNumberWhenInputNumberDoesNotDividedby3or5or15() {
+        int inputNumber = 49;
         Assert.assertEquals(String.valueOf(inputNumber), FizzBuzzUtils.getFizzBuzzResponse(inputNumber));
     }
+
+    @Test
+    public void shouldReturnZeroWhenInputNumberPassedAsZero() {
+        int inputNumber = 0;
+        Assert.assertEquals(String.valueOf(inputNumber), FizzBuzzUtils.getFizzBuzzResponse(inputNumber));
+    }
+
+
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldReturnExceptionWhenNegetiveNumberIsPassed() {

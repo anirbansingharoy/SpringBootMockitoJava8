@@ -6,7 +6,9 @@ public class FizzBuzzUtils {
     {
       if(inputNumber<0)
           throw new IllegalArgumentException();
-        if (inputNumber%15==0)
+      else if (inputNumber==0)
+          return String.valueOf(inputNumber);
+      else if (inputNumber%15==0)
             return "fizzbuzz";
         else if(inputNumber%3==0)
             return "fizz";
